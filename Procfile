@@ -1,2 +1,2 @@
-worker: python fav_bot.py
+worker: python main.py
 web: python server.py
