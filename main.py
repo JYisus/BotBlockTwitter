@@ -26,7 +26,6 @@ if __name__ == "__main__":
 
     if check_credentials(credentials) & (STALKER_ACCOUNT != ''):
         bot = TwitterBot(credentials, ACCOUNT,STALKER_ACCOUNT)
-        # bot.block_followersOf_replying(ACCOUNT, STALKER_ACCOUNT)
         bot.block_followersOf_replying()
     else:
         print('Credenciales no validas')

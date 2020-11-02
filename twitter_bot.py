@@ -49,17 +49,3 @@ class TwitterBot:
 
     def __tweeted_by_stalked_account(self, tweet):
         return (tweet['text'][0:4] == 'RT @')
-
-
-    # def __tweeted_by_stalked_account(self, tweet):
-    #     return (tweet['text'][0:4] != 'RT @')
-
-    # def __reply(self, tweet_id):
-    #     tweet_text = self.text_generator.get_random_text()
-    #     response = self.api.request('statuses/update', {'status': f'@{self.stalked_account} {tweet_text}', 'in_reply_to_status_id': tweet_id})
-    #     print('SUCCESS' if response.status_code == 200 else 'PROBLEM: ' + response.text)
-
-    # def __fav(self, tweet_id):
-    #     response = self.api.request('favorites/create', {'id': tweet_id})
-    #     print('SUCCESS' if response.status_code == 200 else 'PROBLEM: ' + response.text)
-
