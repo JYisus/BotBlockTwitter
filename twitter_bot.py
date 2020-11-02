@@ -40,8 +40,11 @@ class TwitterBot:
 
             content = json.loads(relation.response._content)
 
+            if hasattr(content, 'relationship'):
             # print(content['relationship']['target']['followed_by'])
-            return content['relationship']['target']['followed_by']
+                return content['relationship']['target']['followed_by']
+            else:
+                print(content)
 
         else:
             return False
