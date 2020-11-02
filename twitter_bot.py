@@ -1,5 +1,4 @@
 from TwitterAPI import TwitterAPI
-from text_generator import TextGenerator
 import json
 
 class TwitterBot:
@@ -10,7 +9,6 @@ class TwitterBot:
                     credentials['access_token_secret'])
         
         self.account = account
-        self.text_generator = TextGenerator()
         self.stalker_account = stalker_account
         self.stalker_account_id = self.__get_stalker_account_id()
     
@@ -20,8 +18,9 @@ class TwitterBot:
             # print(tweet)
             if self.__user_follows_stalker(tweet):
                 user = tweet['user']['id']
+                username = tweet['user']['screen_name']
                 self.api.request('blocks/create', { 'user_id' : user })
-                print(f'User @{user} blocked!')
+                print(f'User @{username} blocked!')
             # if is_following_stalker():
 
 
